@@ -1,14 +1,5 @@
-# Falame_PrincesJoy_ShoppingCartActivity-
+Project Overview This is my Shopping Cart System made with C#. I used classes and objects to manage products and an array to handle the cart. I improved the structure by moving all product related logic into the Product class, like stock checking and stock deduction, instead of doing it directly in Main. I also added a GetItemTotal(int quantity) method so totals are now calculated properly inside the class instead of being computed in Main. The program checks stock before adding items, validates user input, and handles discounts automatically.
 
-Project Overview
-This is my Shopping Cart System made with C#. I used classes and objects to manage products and an array to handle the cart. The program checks for stock, validates user input, and handles discounts automatically.
+Key Features When it comes to the cart, theres a check for duplicates. So if you try to add the same item again, it doesnt create a new entry. It just increases the quantity on the existing one which keeps things cleaner. The cart is still limited to 10 unique items. I also fixed a bug where even if the cart was full, stock was still being deducted and it still said “Added to cart!” — now it only deducts stock if the item is actually successfully added. Another fix is that I now properly use HasEnoughStock() and DeductStock() methods instead of directly changing RemainingStock in Main. The receipt was also improved because before it was showing item IDs, but now it displays product names so its easier to read. On discounts, if the total reaches 5000 pesos or more, it still automatically applies 10 percent off. I also fixed the continue prompt so it properly checks Y/y and re-prompts instead of exiting on invalid input.
 
-Key Features
-When it comes to the cart, theres a check for duplicates. So if you try to add the same item again, it doesnt make a new entry. It just bumps up the quantity on the existing one. That keeps things cleaner.
-The cart itself is limited to 10 unique items. I set it that way to keep it simple, not sure if thats the best number though.
-On discounts, if the total comes to 5000 pesos or higher, it automatically takes off 10 percent
-
-AI Usage in This Project
-I used AI a few times during the project when I got stuck. One issue was the receipt showing “{grandTotal}” instead of the actual value, which I fixed by using C# string interpolation with $.
-I also used AI to check if I missed anything in the requirements, and I realized I needed to adjust the discount rule so it only applies at ₱5,000. Another prompt helped me handle duplicate items in a fixed-size cart array.
-After that, I updated my code: fixed the receipt display, corrected the discount threshold, moved stock checking and deduction into methods in the Product class, and added validation to limit the cart to 10 unique items.
+AI Usage in This Project I used AI a few times during the project when I got stuck or needed to improve structure. One issue was fixing how totals were calculated, so I added a GetItemTotal method inside the Product class instead of computing everything in Main. I also used AI to help identify logic bugs like stock being deducted even when the cart was full, and the receipt showing IDs instead of product names. Another thing was improving input validation so the continue prompt doesnt break on invalid input and properly re-asks the user. After that, I updated my code by fixing receipt display and improving stock handling.
